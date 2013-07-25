@@ -1,0 +1,5 @@
+D:\Projects\AutoDeploy\AutoDeploy\AutoDeploy\BussinessObjects\bin\Debug\AutoDeploy.BusinessObjects.dll
+D:\Projects\AutoDeploy\AutoDeploy\AutoDeploy\BussinessObjects\bin\Debug\AutoDeploy.BusinessObjects.pdb
+D:\Projects\AutoDeploy\AutoDeploy\AutoDeploy\BussinessObjects\obj\Debug\ResolveAssemblyReference.cache
+D:\Projects\AutoDeploy\AutoDeploy\AutoDeploy\BussinessObjects\obj\Debug\AutoDeploy.BusinessObjects.dll
+D:\Projects\AutoDeploy\AutoDeploy\AutoDeploy\BussinessObjects\obj\Debug\AutoDeploy.BusinessObjects.pdb

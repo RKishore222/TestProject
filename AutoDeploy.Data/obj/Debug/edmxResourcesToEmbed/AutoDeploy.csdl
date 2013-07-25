@@ -1,0 +1,543 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AutoDeployModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="AutoDeployEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Build" EntityType="AutoDeployModel.Build" />
+    <EntitySet Name="BuildTypes" EntityType="AutoDeployModel.BuildTypes" />
+    <EntitySet Name="Deploy" EntityType="AutoDeployModel.Deploy" />
+    <EntitySet Name="Package" EntityType="AutoDeployModel.Package" />
+    <EntitySet Name="ProjectDetails" EntityType="AutoDeployModel.ProjectDetails" />
+    <EntitySet Name="Release" EntityType="AutoDeployModel.Release" />
+    <EntitySet Name="ReleasePackage" EntityType="AutoDeployModel.ReleasePackage" />
+    <EntitySet Name="Role" EntityType="AutoDeployModel.Role" />
+    <EntitySet Name="Status" EntityType="AutoDeployModel.Status" />
+    <EntitySet Name="TestCaseDetails" EntityType="AutoDeployModel.TestCaseDetails" />
+    <EntitySet Name="UITestCasesDetails" EntityType="AutoDeployModel.UITestCasesDetails" />
+    <EntitySet Name="User" EntityType="AutoDeployModel.User" />
+    <EntitySet Name="VersionControlDetails" EntityType="AutoDeployModel.VersionControlDetails" />
+    <EntitySet Name="VersionControlType" EntityType="AutoDeployModel.VersionControlType" />
+    <AssociationSet Name="FK_Build_BuildTypes" Association="AutoDeployModel.FK_Build_BuildTypes">
+      <End Role="BuildTypes" EntitySet="BuildTypes" />
+      <End Role="Build" EntitySet="Build" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Build_ProjectDetails" Association="AutoDeployModel.FK_Build_ProjectDetails">
+      <End Role="ProjectDetails" EntitySet="ProjectDetails" />
+      <End Role="Build" EntitySet="Build" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Build_Status" Association="AutoDeployModel.FK_Build_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Build" EntitySet="Build" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Package_Build" Association="AutoDeployModel.FK_Package_Build">
+      <End Role="Build" EntitySet="Build" />
+      <End Role="Package" EntitySet="Package" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TestCaseDetails_Build" Association="AutoDeployModel.FK_TestCaseDetails_Build">
+      <End Role="Build" EntitySet="Build" />
+      <End Role="TestCaseDetails" EntitySet="TestCaseDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Deploy_ReleasePackage" Association="AutoDeployModel.FK_Deploy_ReleasePackage">
+      <End Role="ReleasePackage" EntitySet="ReleasePackage" />
+      <End Role="Deploy" EntitySet="Deploy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Deploy_Status" Association="AutoDeployModel.FK_Deploy_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Deploy" EntitySet="Deploy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UITestCasesDetails_Deploy" Association="AutoDeployModel.FK_UITestCasesDetails_Deploy">
+      <End Role="Deploy" EntitySet="Deploy" />
+      <End Role="UITestCasesDetails" EntitySet="UITestCasesDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Package_Status" Association="AutoDeployModel.FK_Package_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Package" EntitySet="Package" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Package_VersionControlDatails" Association="AutoDeployModel.FK_Package_VersionControlDatails">
+      <End Role="VersionControlDetails" EntitySet="VersionControlDetails" />
+      <End Role="Package" EntitySet="Package" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReleasePackage_Package" Association="AutoDeployModel.FK_ReleasePackage_Package">
+      <End Role="Package" EntitySet="Package" />
+      <End Role="ReleasePackage" EntitySet="ReleasePackage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectDetails_User" Association="AutoDeployModel.FK_ProjectDetails_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="ProjectDetails" EntitySet="ProjectDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectDetails_VersionControlDatails" Association="AutoDeployModel.FK_ProjectDetails_VersionControlDatails">
+      <End Role="VersionControlDetails" EntitySet="VersionControlDetails" />
+      <End Role="ProjectDetails" EntitySet="ProjectDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReleasePackage_Release" Association="AutoDeployModel.FK_ReleasePackage_Release">
+      <End Role="Release" EntitySet="Release" />
+      <End Role="ReleasePackage" EntitySet="ReleasePackage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Role" Association="AutoDeployModel.FK_User_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TestCaseDetails_Status" Association="AutoDeployModel.FK_TestCaseDetails_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="TestCaseDetails" EntitySet="TestCaseDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UITestCasesDetails_Status" Association="AutoDeployModel.FK_UITestCasesDetails_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="UITestCasesDetails" EntitySet="UITestCasesDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VersionControlDatails_User" Association="AutoDeployModel.FK_VersionControlDatails_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="VersionControlDetails" EntitySet="VersionControlDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VersionControlDatails_VersionControlType" Association="AutoDeployModel.FK_VersionControlDatails_VersionControlType">
+      <End Role="VersionControlType" EntitySet="VersionControlType" />
+      <End Role="VersionControlDetails" EntitySet="VersionControlDetails" />
+    </AssociationSet>
+    <EntitySet Name="DeploymentServers" EntityType="AutoDeployModel.DeploymentServers" />
+    <AssociationSet Name="FK_Deploy_DeploymentServers" Association="AutoDeployModel.FK_Deploy_DeploymentServers">
+      <End Role="DeploymentServers" EntitySet="DeploymentServers" />
+      <End Role="Deploy" EntitySet="Deploy" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Build">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="BuildTypeID" Nullable="false" />
+    <Property Type="Int32" Name="ProjectID" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="String" Name="Note" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+    <NavigationProperty Name="BuildTypes" Relationship="AutoDeployModel.FK_Build_BuildTypes" FromRole="Build" ToRole="BuildTypes" />
+    <NavigationProperty Name="ProjectDetails" Relationship="AutoDeployModel.FK_Build_ProjectDetails" FromRole="Build" ToRole="ProjectDetails" />
+    <NavigationProperty Name="Status1" Relationship="AutoDeployModel.FK_Build_Status" FromRole="Build" ToRole="Status" />
+    <NavigationProperty Name="Package" Relationship="AutoDeployModel.FK_Package_Build" FromRole="Build" ToRole="Package" />
+    <NavigationProperty Name="TestCaseDetails" Relationship="AutoDeployModel.FK_TestCaseDetails_Build" FromRole="Build" ToRole="TestCaseDetails" />
+  </EntityType>
+  <EntityType Name="BuildTypes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Build" Relationship="AutoDeployModel.FK_Build_BuildTypes" FromRole="BuildTypes" ToRole="Build" />
+  </EntityType>
+  <EntityType Name="Deploy">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ServerID" Nullable="false" />
+    <Property Type="Int32" Name="ReleasePackageID" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="String" Name="Note" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+    <NavigationProperty Name="ReleasePackage" Relationship="AutoDeployModel.FK_Deploy_ReleasePackage" FromRole="Deploy" ToRole="ReleasePackage" />
+    <NavigationProperty Name="Status1" Relationship="AutoDeployModel.FK_Deploy_Status" FromRole="Deploy" ToRole="Status" />
+    <NavigationProperty Name="UITestCasesDetails" Relationship="AutoDeployModel.FK_UITestCasesDetails_Deploy" FromRole="Deploy" ToRole="UITestCasesDetails" />
+    <NavigationProperty Name="DeploymentServers" Relationship="AutoDeployModel.FK_Deploy_DeploymentServers" FromRole="Deploy" ToRole="DeploymentServers" />
+  </EntityType>
+  <EntityType Name="Package">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="BuildID" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="String" Name="PackageVersion" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PackagePath" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="VersionControlID" Nullable="false" />
+    <Property Type="String" Name="Note" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+    <NavigationProperty Name="Build" Relationship="AutoDeployModel.FK_Package_Build" FromRole="Package" ToRole="Build" />
+    <NavigationProperty Name="Status1" Relationship="AutoDeployModel.FK_Package_Status" FromRole="Package" ToRole="Status" />
+    <NavigationProperty Name="VersionControlDetails" Relationship="AutoDeployModel.FK_Package_VersionControlDatails" FromRole="Package" ToRole="VersionControlDetails" />
+    <NavigationProperty Name="ReleasePackage" Relationship="AutoDeployModel.FK_ReleasePackage_Package" FromRole="Package" ToRole="ReleasePackage" />
+  </EntityType>
+  <EntityType Name="ProjectDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+    <Property Type="String" Name="ProjectName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="VersionControlID" Nullable="false" />
+    <Property Type="String" Name="SolutionPath" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ProjectPath" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Configuration" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Platform" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Descrption" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedDate" />
+    <NavigationProperty Name="Build" Relationship="AutoDeployModel.FK_Build_ProjectDetails" FromRole="ProjectDetails" ToRole="Build" />
+    <NavigationProperty Name="User" Relationship="AutoDeployModel.FK_ProjectDetails_User" FromRole="ProjectDetails" ToRole="User" />
+    <NavigationProperty Name="VersionControlDetails" Relationship="AutoDeployModel.FK_ProjectDetails_VersionControlDatails" FromRole="ProjectDetails" ToRole="VersionControlDetails" />
+  </EntityType>
+  <EntityType Name="Release">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Version" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Note" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+    <NavigationProperty Name="ReleasePackage" Relationship="AutoDeployModel.FK_ReleasePackage_Release" FromRole="Release" ToRole="ReleasePackage" />
+  </EntityType>
+  <EntityType Name="ReleasePackage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ReleaseID" Nullable="false" />
+    <Property Type="Int32" Name="PackageID" Nullable="false" />
+    <Property Type="String" Name="Note" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+    <NavigationProperty Name="Deploy" Relationship="AutoDeployModel.FK_Deploy_ReleasePackage" FromRole="ReleasePackage" ToRole="Deploy" />
+    <NavigationProperty Name="Package" Relationship="AutoDeployModel.FK_ReleasePackage_Package" FromRole="ReleasePackage" ToRole="Package" />
+    <NavigationProperty Name="Release" Relationship="AutoDeployModel.FK_ReleasePackage_Release" FromRole="ReleasePackage" ToRole="Release" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Role1" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Description" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="User" Relationship="AutoDeployModel.FK_User_Role" FromRole="Role" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Status1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Build" Relationship="AutoDeployModel.FK_Build_Status" FromRole="Status" ToRole="Build" />
+    <NavigationProperty Name="Deploy" Relationship="AutoDeployModel.FK_Deploy_Status" FromRole="Status" ToRole="Deploy" />
+    <NavigationProperty Name="Package" Relationship="AutoDeployModel.FK_Package_Status" FromRole="Status" ToRole="Package" />
+    <NavigationProperty Name="TestCaseDetails" Relationship="AutoDeployModel.FK_TestCaseDetails_Status" FromRole="Status" ToRole="TestCaseDetails" />
+    <NavigationProperty Name="UITestCasesDetails" Relationship="AutoDeployModel.FK_UITestCasesDetails_Status" FromRole="Status" ToRole="UITestCasesDetails" />
+  </EntityType>
+  <EntityType Name="TestCaseDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="BuildID" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="CreatedDate" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="BuildID" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="String" Name="Note" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+    <NavigationProperty Name="Build" Relationship="AutoDeployModel.FK_TestCaseDetails_Build" FromRole="TestCaseDetails" ToRole="Build" />
+    <NavigationProperty Name="Status1" Relationship="AutoDeployModel.FK_TestCaseDetails_Status" FromRole="TestCaseDetails" ToRole="Status" />
+  </EntityType>
+  <EntityType Name="UITestCasesDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="DeployeID" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="String" Name="Note" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreaedDate" Nullable="false" />
+    <NavigationProperty Name="Deploy" Relationship="AutoDeployModel.FK_UITestCasesDetails_Deploy" FromRole="UITestCasesDetails" ToRole="Deploy" />
+    <NavigationProperty Name="Status1" Relationship="AutoDeployModel.FK_UITestCasesDetails_Status" FromRole="UITestCasesDetails" ToRole="Status" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="RoleID" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LastName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MiddleName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+    <NavigationProperty Name="ProjectDetails" Relationship="AutoDeployModel.FK_ProjectDetails_User" FromRole="User" ToRole="ProjectDetails" />
+    <NavigationProperty Name="Role" Relationship="AutoDeployModel.FK_User_Role" FromRole="User" ToRole="Role" />
+    <NavigationProperty Name="VersionControlDetails" Relationship="AutoDeployModel.FK_VersionControlDatails_User" FromRole="User" ToRole="VersionControlDetails" />
+  </EntityType>
+  <EntityType Name="VersionControlDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+    <Property Type="Int32" Name="VersionControlTypeID" Nullable="false" />
+    <Property Type="String" Name="DominAddress" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Package" Relationship="AutoDeployModel.FK_Package_VersionControlDatails" FromRole="VersionControlDetails" ToRole="Package" />
+    <NavigationProperty Name="ProjectDetails" Relationship="AutoDeployModel.FK_ProjectDetails_VersionControlDatails" FromRole="VersionControlDetails" ToRole="ProjectDetails" />
+    <NavigationProperty Name="User" Relationship="AutoDeployModel.FK_VersionControlDatails_User" FromRole="VersionControlDetails" ToRole="User" />
+    <NavigationProperty Name="VersionControlType" Relationship="AutoDeployModel.FK_VersionControlDatails_VersionControlType" FromRole="VersionControlDetails" ToRole="VersionControlType" />
+  </EntityType>
+  <EntityType Name="VersionControlType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Description" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="VersionControlDetails" Relationship="AutoDeployModel.FK_VersionControlDatails_VersionControlType" FromRole="VersionControlType" ToRole="VersionControlDetails" />
+  </EntityType>
+  <Association Name="FK_Build_BuildTypes">
+    <End Type="AutoDeployModel.BuildTypes" Role="BuildTypes" Multiplicity="1" />
+    <End Type="AutoDeployModel.Build" Role="Build" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BuildTypes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Build">
+        <PropertyRef Name="BuildTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Build_ProjectDetails">
+    <End Type="AutoDeployModel.ProjectDetails" Role="ProjectDetails" Multiplicity="1" />
+    <End Type="AutoDeployModel.Build" Role="Build" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectDetails">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Build">
+        <PropertyRef Name="ProjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Build_Status">
+    <End Type="AutoDeployModel.Status" Role="Status" Multiplicity="1" />
+    <End Type="AutoDeployModel.Build" Role="Build" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Build">
+        <PropertyRef Name="Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Package_Build">
+    <End Type="AutoDeployModel.Build" Role="Build" Multiplicity="1" />
+    <End Type="AutoDeployModel.Package" Role="Package" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Build">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Package">
+        <PropertyRef Name="BuildID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TestCaseDetails_Build">
+    <End Type="AutoDeployModel.Build" Role="Build" Multiplicity="1" />
+    <End Type="AutoDeployModel.TestCaseDetails" Role="TestCaseDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Build">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TestCaseDetails">
+        <PropertyRef Name="BuildID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Deploy_ReleasePackage">
+    <End Type="AutoDeployModel.ReleasePackage" Role="ReleasePackage" Multiplicity="1" />
+    <End Type="AutoDeployModel.Deploy" Role="Deploy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReleasePackage">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Deploy">
+        <PropertyRef Name="ReleasePackageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Deploy_Status">
+    <End Type="AutoDeployModel.Status" Role="Status" Multiplicity="1" />
+    <End Type="AutoDeployModel.Deploy" Role="Deploy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Deploy">
+        <PropertyRef Name="Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UITestCasesDetails_Deploy">
+    <End Type="AutoDeployModel.Deploy" Role="Deploy" Multiplicity="1" />
+    <End Type="AutoDeployModel.UITestCasesDetails" Role="UITestCasesDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Deploy">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UITestCasesDetails">
+        <PropertyRef Name="DeployeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Package_Status">
+    <End Type="AutoDeployModel.Status" Role="Status" Multiplicity="1" />
+    <End Type="AutoDeployModel.Package" Role="Package" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Package">
+        <PropertyRef Name="Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Package_VersionControlDatails">
+    <End Type="AutoDeployModel.VersionControlDetails" Role="VersionControlDetails" Multiplicity="1" />
+    <End Type="AutoDeployModel.Package" Role="Package" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VersionControlDetails">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Package">
+        <PropertyRef Name="VersionControlID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReleasePackage_Package">
+    <End Type="AutoDeployModel.Package" Role="Package" Multiplicity="1" />
+    <End Type="AutoDeployModel.ReleasePackage" Role="ReleasePackage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Package">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ReleasePackage">
+        <PropertyRef Name="PackageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectDetails_User">
+    <End Type="AutoDeployModel.User" Role="User" Multiplicity="1" />
+    <End Type="AutoDeployModel.ProjectDetails" Role="ProjectDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProjectDetails">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectDetails_VersionControlDatails">
+    <End Type="AutoDeployModel.VersionControlDetails" Role="VersionControlDetails" Multiplicity="1" />
+    <End Type="AutoDeployModel.ProjectDetails" Role="ProjectDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VersionControlDetails">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProjectDetails">
+        <PropertyRef Name="VersionControlID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReleasePackage_Release">
+    <End Type="AutoDeployModel.Release" Role="Release" Multiplicity="1" />
+    <End Type="AutoDeployModel.ReleasePackage" Role="ReleasePackage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Release">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ReleasePackage">
+        <PropertyRef Name="ReleaseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Role">
+    <End Type="AutoDeployModel.Role" Role="Role" Multiplicity="1" />
+    <End Type="AutoDeployModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TestCaseDetails_Status">
+    <End Type="AutoDeployModel.Status" Role="Status" Multiplicity="1" />
+    <End Type="AutoDeployModel.TestCaseDetails" Role="TestCaseDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TestCaseDetails">
+        <PropertyRef Name="Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UITestCasesDetails_Status">
+    <End Type="AutoDeployModel.Status" Role="Status" Multiplicity="1" />
+    <End Type="AutoDeployModel.UITestCasesDetails" Role="UITestCasesDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UITestCasesDetails">
+        <PropertyRef Name="Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VersionControlDatails_User">
+    <End Type="AutoDeployModel.User" Role="User" Multiplicity="1" />
+    <End Type="AutoDeployModel.VersionControlDetails" Role="VersionControlDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="VersionControlDetails">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VersionControlDatails_VersionControlType">
+    <End Type="AutoDeployModel.VersionControlType" Role="VersionControlType" Multiplicity="1" />
+    <End Type="AutoDeployModel.VersionControlDetails" Role="VersionControlDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VersionControlType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="VersionControlDetails">
+        <PropertyRef Name="VersionControlTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="DeploymentServers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ServerName" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DomainUrl" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+    <NavigationProperty Name="Deploy" Relationship="AutoDeployModel.FK_Deploy_DeploymentServers" FromRole="DeploymentServers" ToRole="Deploy" />
+  </EntityType>
+  <Association Name="FK_Deploy_DeploymentServers">
+    <End Type="AutoDeployModel.DeploymentServers" Role="DeploymentServers" Multiplicity="1" />
+    <End Type="AutoDeployModel.Deploy" Role="Deploy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DeploymentServers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Deploy">
+        <PropertyRef Name="ServerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

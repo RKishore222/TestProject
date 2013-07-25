@@ -1,0 +1,514 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AutoDeployModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="AutoDeployModelStoreContainer">
+    <EntitySet Name="Build" EntityType="AutoDeployModel.Store.Build" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BuildTypes" EntityType="AutoDeployModel.Store.BuildTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Deploy" EntityType="AutoDeployModel.Store.Deploy" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DeploymentServers" EntityType="AutoDeployModel.Store.DeploymentServers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Package" EntityType="AutoDeployModel.Store.Package" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProjectDetails" EntityType="AutoDeployModel.Store.ProjectDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Release" EntityType="AutoDeployModel.Store.Release" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ReleasePackage" EntityType="AutoDeployModel.Store.ReleasePackage" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Role" EntityType="AutoDeployModel.Store.Role" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Status" EntityType="AutoDeployModel.Store.Status" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TestCaseDetails" EntityType="AutoDeployModel.Store.TestCaseDetails" store:Type="Tables" store:Schema="dbo" store:Name="TestCaseDetails">
+      <DefiningQuery>SELECT 
+      [TestCaseDetails].[ID] AS [ID], 
+      [TestCaseDetails].[BuildID] AS [BuildID], 
+      [TestCaseDetails].[Status] AS [Status], 
+      [TestCaseDetails].[Note] AS [Note], 
+      [TestCaseDetails].[CreatedDate] AS [CreatedDate]
+      FROM [dbo].[TestCaseDetails] AS [TestCaseDetails]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="UITestCasesDetails" EntityType="AutoDeployModel.Store.UITestCasesDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="User" EntityType="AutoDeployModel.Store.User" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VersionControlDetails" EntityType="AutoDeployModel.Store.VersionControlDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VersionControlType" EntityType="AutoDeployModel.Store.VersionControlType" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Build_BuildTypes" Association="AutoDeployModel.Store.FK_Build_BuildTypes">
+      <End Role="BuildTypes" EntitySet="BuildTypes" />
+      <End Role="Build" EntitySet="Build" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Build_ProjectDetails" Association="AutoDeployModel.Store.FK_Build_ProjectDetails">
+      <End Role="ProjectDetails" EntitySet="ProjectDetails" />
+      <End Role="Build" EntitySet="Build" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Build_Status" Association="AutoDeployModel.Store.FK_Build_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Build" EntitySet="Build" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Deploy_DeploymentServers" Association="AutoDeployModel.Store.FK_Deploy_DeploymentServers">
+      <End Role="DeploymentServers" EntitySet="DeploymentServers" />
+      <End Role="Deploy" EntitySet="Deploy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Deploy_ReleasePackage" Association="AutoDeployModel.Store.FK_Deploy_ReleasePackage">
+      <End Role="ReleasePackage" EntitySet="ReleasePackage" />
+      <End Role="Deploy" EntitySet="Deploy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Deploy_Status" Association="AutoDeployModel.Store.FK_Deploy_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Deploy" EntitySet="Deploy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Package_Build" Association="AutoDeployModel.Store.FK_Package_Build">
+      <End Role="Build" EntitySet="Build" />
+      <End Role="Package" EntitySet="Package" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Package_Status" Association="AutoDeployModel.Store.FK_Package_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Package" EntitySet="Package" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Package_VersionControlDatails" Association="AutoDeployModel.Store.FK_Package_VersionControlDatails">
+      <End Role="VersionControlDetails" EntitySet="VersionControlDetails" />
+      <End Role="Package" EntitySet="Package" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectDetails_User" Association="AutoDeployModel.Store.FK_ProjectDetails_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="ProjectDetails" EntitySet="ProjectDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectDetails_VersionControlDatails" Association="AutoDeployModel.Store.FK_ProjectDetails_VersionControlDatails">
+      <End Role="VersionControlDetails" EntitySet="VersionControlDetails" />
+      <End Role="ProjectDetails" EntitySet="ProjectDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReleasePackage_Package" Association="AutoDeployModel.Store.FK_ReleasePackage_Package">
+      <End Role="Package" EntitySet="Package" />
+      <End Role="ReleasePackage" EntitySet="ReleasePackage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReleasePackage_Release" Association="AutoDeployModel.Store.FK_ReleasePackage_Release">
+      <End Role="Release" EntitySet="Release" />
+      <End Role="ReleasePackage" EntitySet="ReleasePackage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TestCaseDetails_Build" Association="AutoDeployModel.Store.FK_TestCaseDetails_Build">
+      <End Role="Build" EntitySet="Build" />
+      <End Role="TestCaseDetails" EntitySet="TestCaseDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TestCaseDetails_Status" Association="AutoDeployModel.Store.FK_TestCaseDetails_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="TestCaseDetails" EntitySet="TestCaseDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UITestCasesDetails_Deploy" Association="AutoDeployModel.Store.FK_UITestCasesDetails_Deploy">
+      <End Role="Deploy" EntitySet="Deploy" />
+      <End Role="UITestCasesDetails" EntitySet="UITestCasesDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UITestCasesDetails_Status" Association="AutoDeployModel.Store.FK_UITestCasesDetails_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="UITestCasesDetails" EntitySet="UITestCasesDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Role" Association="AutoDeployModel.Store.FK_User_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VersionControlDatails_User" Association="AutoDeployModel.Store.FK_VersionControlDatails_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="VersionControlDetails" EntitySet="VersionControlDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VersionControlDatails_VersionControlType" Association="AutoDeployModel.Store.FK_VersionControlDatails_VersionControlType">
+      <End Role="VersionControlType" EntitySet="VersionControlType" />
+      <End Role="VersionControlDetails" EntitySet="VersionControlDetails" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Build">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BuildTypeID" Type="int" Nullable="false" />
+    <Property Name="ProjectID" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="Note" Type="varchar(max)" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BuildTypes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Deploy">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ServerID" Type="int" Nullable="false" />
+    <Property Name="ReleasePackageID" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="Note" Type="varchar(max)" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DeploymentServers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ServerName" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="DomainUrl" Type="varchar(max)" Nullable="false" />
+    <Property Name="Description" Type="varchar(max)" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Package">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BuildID" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="PackageVersion" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="PackagePath" Type="varchar(max)" Nullable="false" />
+    <Property Name="VersionControlID" Type="int" Nullable="false" />
+    <Property Name="Note" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="ProjectName" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="VersionControlID" Type="int" Nullable="false" />
+    <Property Name="SolutionPath" Type="varchar(max)" />
+    <Property Name="ProjectPath" Type="varchar(max)" />
+    <Property Name="Configuration" Type="varchar" MaxLength="15" />
+    <Property Name="Platform" Type="varchar" MaxLength="15" />
+    <Property Name="Descrption" Type="varchar(max)" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Release">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Version" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Note" Type="varchar(max)" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReleasePackage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ReleaseID" Type="int" Nullable="false" />
+    <Property Name="PackageID" Type="int" Nullable="false" />
+    <Property Name="Note" Type="varchar(max)" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Role" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="Description" Type="varchar" MaxLength="5000" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="varchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'AutoDeploy.dbo.TestCaseDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="TestCaseDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="BuildID" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="CreatedDate" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="BuildID" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="Note" Type="varchar(max)" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UITestCasesDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DeployeID" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="Note" Type="varchar(max)" Nullable="false" />
+    <Property Name="CreaedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RoleID" Type="int" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="MiddleName" Type="varchar" MaxLength="50" />
+    <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VersionControlDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="VersionControlTypeID" Type="int" Nullable="false" />
+    <Property Name="DominAddress" Type="varchar(max)" Nullable="false" />
+    <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="VersionControlType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="Description" Type="varchar" MaxLength="5000" />
+  </EntityType>
+  <Association Name="FK_Build_BuildTypes">
+    <End Role="BuildTypes" Type="AutoDeployModel.Store.BuildTypes" Multiplicity="1" />
+    <End Role="Build" Type="AutoDeployModel.Store.Build" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BuildTypes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Build">
+        <PropertyRef Name="BuildTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Build_ProjectDetails">
+    <End Role="ProjectDetails" Type="AutoDeployModel.Store.ProjectDetails" Multiplicity="1" />
+    <End Role="Build" Type="AutoDeployModel.Store.Build" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectDetails">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Build">
+        <PropertyRef Name="ProjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Build_Status">
+    <End Role="Status" Type="AutoDeployModel.Store.Status" Multiplicity="1" />
+    <End Role="Build" Type="AutoDeployModel.Store.Build" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Build">
+        <PropertyRef Name="Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Deploy_DeploymentServers">
+    <End Role="DeploymentServers" Type="AutoDeployModel.Store.DeploymentServers" Multiplicity="1" />
+    <End Role="Deploy" Type="AutoDeployModel.Store.Deploy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DeploymentServers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Deploy">
+        <PropertyRef Name="ServerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Deploy_ReleasePackage">
+    <End Role="ReleasePackage" Type="AutoDeployModel.Store.ReleasePackage" Multiplicity="1" />
+    <End Role="Deploy" Type="AutoDeployModel.Store.Deploy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReleasePackage">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Deploy">
+        <PropertyRef Name="ReleasePackageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Deploy_Status">
+    <End Role="Status" Type="AutoDeployModel.Store.Status" Multiplicity="1" />
+    <End Role="Deploy" Type="AutoDeployModel.Store.Deploy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Deploy">
+        <PropertyRef Name="Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Package_Build">
+    <End Role="Build" Type="AutoDeployModel.Store.Build" Multiplicity="1" />
+    <End Role="Package" Type="AutoDeployModel.Store.Package" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Build">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Package">
+        <PropertyRef Name="BuildID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Package_Status">
+    <End Role="Status" Type="AutoDeployModel.Store.Status" Multiplicity="1" />
+    <End Role="Package" Type="AutoDeployModel.Store.Package" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Package">
+        <PropertyRef Name="Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Package_VersionControlDatails">
+    <End Role="VersionControlDetails" Type="AutoDeployModel.Store.VersionControlDetails" Multiplicity="1" />
+    <End Role="Package" Type="AutoDeployModel.Store.Package" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VersionControlDetails">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Package">
+        <PropertyRef Name="VersionControlID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectDetails_User">
+    <End Role="User" Type="AutoDeployModel.Store.User" Multiplicity="1" />
+    <End Role="ProjectDetails" Type="AutoDeployModel.Store.ProjectDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProjectDetails">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectDetails_VersionControlDatails">
+    <End Role="VersionControlDetails" Type="AutoDeployModel.Store.VersionControlDetails" Multiplicity="1" />
+    <End Role="ProjectDetails" Type="AutoDeployModel.Store.ProjectDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VersionControlDetails">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProjectDetails">
+        <PropertyRef Name="VersionControlID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReleasePackage_Package">
+    <End Role="Package" Type="AutoDeployModel.Store.Package" Multiplicity="1" />
+    <End Role="ReleasePackage" Type="AutoDeployModel.Store.ReleasePackage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Package">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ReleasePackage">
+        <PropertyRef Name="PackageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReleasePackage_Release">
+    <End Role="Release" Type="AutoDeployModel.Store.Release" Multiplicity="1" />
+    <End Role="ReleasePackage" Type="AutoDeployModel.Store.ReleasePackage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Release">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ReleasePackage">
+        <PropertyRef Name="ReleaseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TestCaseDetails_Build">
+    <End Role="Build" Type="AutoDeployModel.Store.Build" Multiplicity="1" />
+    <End Role="TestCaseDetails" Type="AutoDeployModel.Store.TestCaseDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Build">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TestCaseDetails">
+        <PropertyRef Name="BuildID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TestCaseDetails_Status">
+    <End Role="Status" Type="AutoDeployModel.Store.Status" Multiplicity="1" />
+    <End Role="TestCaseDetails" Type="AutoDeployModel.Store.TestCaseDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TestCaseDetails">
+        <PropertyRef Name="Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UITestCasesDetails_Deploy">
+    <End Role="Deploy" Type="AutoDeployModel.Store.Deploy" Multiplicity="1" />
+    <End Role="UITestCasesDetails" Type="AutoDeployModel.Store.UITestCasesDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Deploy">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UITestCasesDetails">
+        <PropertyRef Name="DeployeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UITestCasesDetails_Status">
+    <End Role="Status" Type="AutoDeployModel.Store.Status" Multiplicity="1" />
+    <End Role="UITestCasesDetails" Type="AutoDeployModel.Store.UITestCasesDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UITestCasesDetails">
+        <PropertyRef Name="Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Role">
+    <End Role="Role" Type="AutoDeployModel.Store.Role" Multiplicity="1" />
+    <End Role="User" Type="AutoDeployModel.Store.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VersionControlDatails_User">
+    <End Role="User" Type="AutoDeployModel.Store.User" Multiplicity="1" />
+    <End Role="VersionControlDetails" Type="AutoDeployModel.Store.VersionControlDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="VersionControlDetails">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VersionControlDatails_VersionControlType">
+    <End Role="VersionControlType" Type="AutoDeployModel.Store.VersionControlType" Multiplicity="1" />
+    <End Role="VersionControlDetails" Type="AutoDeployModel.Store.VersionControlDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VersionControlType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="VersionControlDetails">
+        <PropertyRef Name="VersionControlTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

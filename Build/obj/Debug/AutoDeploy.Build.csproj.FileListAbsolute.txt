@@ -1,0 +1,9 @@
+D:\Projects\AutoDeploy\AutoDeploy\AutoDeploy\Build\bin\Debug\AutoDeploy.Build.dll
+D:\Projects\AutoDeploy\AutoDeploy\AutoDeploy\Build\bin\Debug\AutoDeploy.Build.pdb
+D:\Projects\AutoDeploy\AutoDeploy\AutoDeploy\Build\bin\Debug\AutoDeploy.BusinessObjects.dll
+D:\Projects\AutoDeploy\AutoDeploy\AutoDeploy\Build\bin\Debug\AutoDeploy.Utilities.dll
+D:\Projects\AutoDeploy\AutoDeploy\AutoDeploy\Build\bin\Debug\AutoDeploy.BusinessObjects.pdb
+D:\Projects\AutoDeploy\AutoDeploy\AutoDeploy\Build\bin\Debug\AutoDeploy.Utilities.pdb
+D:\Projects\AutoDeploy\AutoDeploy\AutoDeploy\Build\obj\Debug\ResolveAssemblyReference.cache
+D:\Projects\AutoDeploy\AutoDeploy\AutoDeploy\Build\obj\Debug\AutoDeploy.Build.dll
+D:\Projects\AutoDeploy\AutoDeploy\AutoDeploy\Build\obj\Debug\AutoDeploy.Build.pdb

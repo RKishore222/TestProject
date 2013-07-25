@@ -1,0 +1,6 @@
+D:\Projects\AutoDeploy\AutoDeploy\AutoDeploy\AutoDeploy.Data\bin\Debug\AutoDeploy.DataAccessLayer.dll.config
+D:\Projects\AutoDeploy\AutoDeploy\AutoDeploy\AutoDeploy.Data\bin\Debug\AutoDeploy.DataAccessLayer.dll
+D:\Projects\AutoDeploy\AutoDeploy\AutoDeploy\AutoDeploy.Data\bin\Debug\AutoDeploy.DataAccessLayer.pdb
+D:\Projects\AutoDeploy\AutoDeploy\AutoDeploy\AutoDeploy.Data\obj\Debug\ResolveAssemblyReference.cache
+D:\Projects\AutoDeploy\AutoDeploy\AutoDeploy\AutoDeploy.Data\obj\Debug\AutoDeploy.DataAccessLayer.dll
+D:\Projects\AutoDeploy\AutoDeploy\AutoDeploy\AutoDeploy.Data\obj\Debug\AutoDeploy.DataAccessLayer.pdb

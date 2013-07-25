@@ -1,0 +1,106 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GetCode", "GetCode", "{ED500E63-2843-42B6-BEB8-2CDF265BA284}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{76335BEF-8970-49CF-8527-969B607AF6A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoDeploy.BusinessObjects", "BussinessObjects\AutoDeploy.BusinessObjects.csproj", "{131EF465-60AA-4CF2-9B6C-794481B658C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoDeploy.Utilities", "Utilities\AutoDeploy.Utilities.csproj", "{3E2285D0-214B-4A57-BCF4-053850D12007}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deploy", "Deploy", "{9369EC5E-C933-4D61-A4F8-70A66DB65ACF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoDeploy.Deploy", "AutoDeploy.Deploy\AutoDeploy.Deploy.csproj", "{F80E1352-1D73-42F6-95AD-B754FE66DE18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoDeploy.Code", "AutoDeploy.Code\AutoDeploy.Code.csproj", "{6CA83AC9-4108-4919-A8E5-30AE714AD8FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoDeploy.UI", "AutoDeploy.UI\AutoDeploy.UI\AutoDeploy.UI.csproj", "{BE4D087D-B793-49B3-B5C0-DF9C5C4A69F0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataBase", "DataBase", "{AC33E99E-A87B-4346-A8C7-0CD015EE28BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoDeploy.DataAccessLayer", "AutoDeploy.Data\AutoDeploy.DataAccessLayer.csproj", "{E605409E-0BFE-4F65-9D6D-716F281F568E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoDeploy.Build", "Build\AutoDeploy.Build.csproj", "{36FE5DDB-E57A-4C89-AB3E-9C03A8A519FB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBScripts", "DBScripts", "{37F04946-3511-44D4-A4B2-3EFAF3F5B191}"
+	ProjectSection(SolutionItems) = preProject
+		DBScripts\AutoDeploy.sql = DBScripts\AutoDeploy.sql
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://northalley.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = AutoDeploy.Code\\AutoDeploy.Code.csproj
+		SccProjectTopLevelParentUniqueName1 = AutoDeploy.sln
+		SccProjectName1 = AutoDeploy.Code
+		SccLocalPath1 = AutoDeploy.Code
+		SccProjectUniqueName2 = AutoDeploy.Data\\AutoDeploy.DataAccessLayer.csproj
+		SccProjectTopLevelParentUniqueName2 = AutoDeploy.sln
+		SccProjectName2 = AutoDeploy.Data
+		SccLocalPath2 = AutoDeploy.Data
+		SccProjectUniqueName3 = AutoDeploy.Deploy\\AutoDeploy.Deploy.csproj
+		SccProjectTopLevelParentUniqueName3 = AutoDeploy.sln
+		SccProjectName3 = AutoDeploy.Deploy
+		SccLocalPath3 = AutoDeploy.Deploy
+		SccProjectUniqueName4 = AutoDeploy.UI\\AutoDeploy.UI\\AutoDeploy.UI.csproj
+		SccProjectName4 = AutoDeploy.UI/AutoDeploy.UI
+		SccLocalPath4 = AutoDeploy.UI\\AutoDeploy.UI
+		SccProjectUniqueName5 = Build\\AutoDeploy.Build.csproj
+		SccProjectTopLevelParentUniqueName5 = AutoDeploy.sln
+		SccProjectName5 = Build
+		SccLocalPath5 = Build
+		SccProjectUniqueName6 = BussinessObjects\\AutoDeploy.BusinessObjects.csproj
+		SccProjectName6 = BussinessObjects
+		SccLocalPath6 = BussinessObjects
+		SccProjectUniqueName7 = Utilities\\AutoDeploy.Utilities.csproj
+		SccProjectName7 = Utilities
+		SccLocalPath7 = Utilities
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{131EF465-60AA-4CF2-9B6C-794481B658C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{131EF465-60AA-4CF2-9B6C-794481B658C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{131EF465-60AA-4CF2-9B6C-794481B658C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{131EF465-60AA-4CF2-9B6C-794481B658C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E2285D0-214B-4A57-BCF4-053850D12007}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E2285D0-214B-4A57-BCF4-053850D12007}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E2285D0-214B-4A57-BCF4-053850D12007}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E2285D0-214B-4A57-BCF4-053850D12007}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F80E1352-1D73-42F6-95AD-B754FE66DE18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F80E1352-1D73-42F6-95AD-B754FE66DE18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F80E1352-1D73-42F6-95AD-B754FE66DE18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F80E1352-1D73-42F6-95AD-B754FE66DE18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CA83AC9-4108-4919-A8E5-30AE714AD8FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CA83AC9-4108-4919-A8E5-30AE714AD8FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CA83AC9-4108-4919-A8E5-30AE714AD8FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CA83AC9-4108-4919-A8E5-30AE714AD8FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE4D087D-B793-49B3-B5C0-DF9C5C4A69F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE4D087D-B793-49B3-B5C0-DF9C5C4A69F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE4D087D-B793-49B3-B5C0-DF9C5C4A69F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE4D087D-B793-49B3-B5C0-DF9C5C4A69F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E605409E-0BFE-4F65-9D6D-716F281F568E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E605409E-0BFE-4F65-9D6D-716F281F568E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E605409E-0BFE-4F65-9D6D-716F281F568E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E605409E-0BFE-4F65-9D6D-716F281F568E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36FE5DDB-E57A-4C89-AB3E-9C03A8A519FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36FE5DDB-E57A-4C89-AB3E-9C03A8A519FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36FE5DDB-E57A-4C89-AB3E-9C03A8A519FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36FE5DDB-E57A-4C89-AB3E-9C03A8A519FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6CA83AC9-4108-4919-A8E5-30AE714AD8FD} = {ED500E63-2843-42B6-BEB8-2CDF265BA284}
+		{36FE5DDB-E57A-4C89-AB3E-9C03A8A519FB} = {76335BEF-8970-49CF-8527-969B607AF6A1}
+		{F80E1352-1D73-42F6-95AD-B754FE66DE18} = {9369EC5E-C933-4D61-A4F8-70A66DB65ACF}
+		{E605409E-0BFE-4F65-9D6D-716F281F568E} = {AC33E99E-A87B-4346-A8C7-0CD015EE28BC}
+	EndGlobalSection
+EndGlobal
